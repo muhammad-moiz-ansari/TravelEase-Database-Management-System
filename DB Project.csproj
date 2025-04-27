@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="signup_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="signup_form.Designer.cs">
+      <DependentUpon>signup_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="welcome_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="signup_form.resx">
+      <DependentUpon>signup_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="welcome_form.resx">
       <DependentUpon>welcome_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beach2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eifil_tower1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

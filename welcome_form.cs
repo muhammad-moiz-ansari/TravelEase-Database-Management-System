@@ -66,12 +66,21 @@ namespace DB_Project
 
     private void signup_button_Click(object sender, EventArgs e)
         {
-
+            signup_form signup_Form = new signup_form(1);
+            signup_Form.ShowDialog();
+            this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void login_button_Click(object sender, EventArgs e)
+        {
+            signup_form signup_Form = new signup_form(0);
+            signup_Form.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -73,6 +73,26 @@ namespace DB_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap beach2 {
+            get {
+                object obj = ResourceManager.GetObject("beach2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eifil_tower1 {
+            get {
+                object obj = ResourceManager.GetObject("eifil_tower1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo5 {
             get {
                 object obj = ResourceManager.GetObject("logo5", resourceCulture);

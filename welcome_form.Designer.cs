@@ -34,10 +34,10 @@
             this.signup_button = new System.Windows.Forms.Button();
             this.login_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.copyright_label = new System.Windows.Forms.Label();
             this.login_abovetext = new System.Windows.Forms.Label();
             this.signup_abovetext = new System.Windows.Forms.Label();
             this.message1 = new System.Windows.Forms.Label();
-            this.copyright_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo_main)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +92,7 @@
             this.login_button.TabIndex = 3;
             this.login_button.Text = "Log In";
             this.login_button.UseVisualStyleBackColor = false;
+            this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
             // panel1
             // 
@@ -109,6 +110,17 @@
             this.panel1.Size = new System.Drawing.Size(1031, 489);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // copyright_label
+            // 
+            this.copyright_label.AutoSize = true;
+            this.copyright_label.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyright_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.copyright_label.Location = new System.Drawing.Point(739, 470);
+            this.copyright_label.Name = "copyright_label";
+            this.copyright_label.Size = new System.Drawing.Size(292, 19);
+            this.copyright_label.TabIndex = 7;
+            this.copyright_label.Text = "© 2025 TravelEase Travel Hub • Contact Us";
             // 
             // login_abovetext
             // 
@@ -142,17 +154,6 @@
             this.message1.Size = new System.Drawing.Size(441, 23);
             this.message1.TabIndex = 4;
             this.message1.Text = "Discover, Book, and Manage Your Perfect Trip with Ease!";
-            // 
-            // copyright_label
-            // 
-            this.copyright_label.AutoSize = true;
-            this.copyright_label.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyright_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.copyright_label.Location = new System.Drawing.Point(739, 470);
-            this.copyright_label.Name = "copyright_label";
-            this.copyright_label.Size = new System.Drawing.Size(292, 19);
-            this.copyright_label.TabIndex = 7;
-            this.copyright_label.Text = "© 2025 TravelEase Travel Hub • Contact Us";
             // 
             // welcome_window
             // 
