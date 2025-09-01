@@ -32,9 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_icon2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +50,239 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addservice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addservice.Designer.cs">
+      <DependentUpon>addservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignedRequestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignedRequestsForm.Designer.cs">
+      <DependentUpon>AssignedRequestsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingManagementForm.Designer.cs">
+      <DependentUpon>BookingManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboardForm.Designer.cs">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="choice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="choice.Designer.cs">
+      <DependentUpon>choice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editservice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editservice.Designer.cs">
+      <DependentUpon>editservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form10.Designer.cs">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12.Designer.cs">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form13.Designer.cs">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form14.Designer.cs">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form15.Designer.cs">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8.Designer.cs">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9.Designer.cs">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratedReports.Designer.cs">
+      <DependentUpon>GeneratedReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelDashboardForm.Designer.cs">
+      <DependentUpon>HotelDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="list.Designer.cs">
+      <DependentUpon>list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login_form.Designer.cs">
+      <DependentUpon>login_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageServicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageServicesForm.Designer.cs">
+      <DependentUpon>ManageServicesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsFormcs.Designer.cs">
+      <DependentUpon>ReportsFormcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_1.Designer.cs">
+      <DependentUpon>Reports_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_2.Designer.cs">
+      <DependentUpon>Reports_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_3.Designer.cs">
+      <DependentUpon>Reports_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_4.Designer.cs">
+      <DependentUpon>Reports_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_5.Designer.cs">
+      <DependentUpon>Reports_5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_6.Designer.cs">
+      <DependentUpon>Reports_6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_7.Designer.cs">
+      <DependentUpon>Reports_7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports_8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports_8.Designer.cs">
+      <DependentUpon>Reports_8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="servicedeletecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="servicedeletecs.Designer.cs">
+      <DependentUpon>servicedeletecs.cs</DependentUpon>
+    </Compile>
     <Compile Include="signup_form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="signup_form.Designer.cs">
       <DependentUpon>signup_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TravellerDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TravellerDashboardForm.Designer.cs">
+      <DependentUpon>TravellerDashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="welcome_form.cs">
       <SubType>Form</SubType>
@@ -60,8 +292,113 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addservice.resx">
+      <DependentUpon>addservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignedRequestsForm.resx">
+      <DependentUpon>AssignedRequestsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingManagementForm.resx">
+      <DependentUpon>BookingManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDashboardForm.resx">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="choice.resx">
+      <DependentUpon>choice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editservice.resx">
+      <DependentUpon>editservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form10.resx">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form13.resx">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form14.resx">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form15.resx">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form9.resx">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratedReports.resx">
+      <DependentUpon>GeneratedReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotelDashboardForm.resx">
+      <DependentUpon>HotelDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="list.resx">
+      <DependentUpon>list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login_form.resx">
+      <DependentUpon>login_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageServicesForm.resx">
+      <DependentUpon>ManageServicesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsFormcs.resx">
+      <DependentUpon>ReportsFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports_1.resx">
+      <DependentUpon>Reports_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports_2.resx">
+      <DependentUpon>Reports_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports_3.resx">
+      <DependentUpon>Reports_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports_4.resx">
+      <DependentUpon>Reports_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports_5.resx">
+      <DependentUpon>Reports_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="servicedeletecs.resx">
+      <DependentUpon>servicedeletecs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="signup_form.resx">
       <DependentUpon>signup_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TravellerDashboardForm.resx">
+      <DependentUpon>TravellerDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="welcome_form.resx">
       <DependentUpon>welcome_form.cs</DependentUpon>
@@ -100,6 +437,147 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eifil_tower1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def_dp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def_dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dp3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dp4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dp_select_box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dp_select_box1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def_dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ticket2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\faded_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-polygon-geometric-transparent-background-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_hide2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 055859.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 055906.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 055915.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 060717.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 060913.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 061051.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 062328.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 062514.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 062657.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 062815.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 063249.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 063254.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 063851.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 064239.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-05-13 064323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="logo_icon2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

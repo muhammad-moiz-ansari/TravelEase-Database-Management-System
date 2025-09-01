@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DB_Project
 {
@@ -17,40 +18,57 @@ namespace DB_Project
         {
             InitializeComponent();
 
+            this.WindowState = FormWindowState.Maximized;
             // Sign Up Button
-            //signup_button.FlatStyle = FlatStyle.Flat;
-            //signup_button.BackColor = Color.FromArgb(84, 230, 160); // Mint Green
-            //signup_button.ForeColor = Color.FromArgb(232, 236, 239); // Off-White
-            //signup_button.Font = new Font("Calibri", 12, FontStyle.Bold);
-            //signup_button.Size = new Size(130, 40);
+            signup_button.Size = new Size(130, 40);
             signup_button.FlatAppearance.BorderSize = 0;
-            signup_button.Text = "Sign Up";
-            // Add icon (if using a custom image)
-            // signup_button.Image = Image.FromFile("path_to_arrow_icon.png");
-            // signup_button.ImageAlign = ContentAlignment.MiddleLeft;
-            // signup_button.TextAlign = ContentAlignment.MiddleCenter;
 
             // Login Button
-            //login_button.FlatStyle = FlatStyle.Flat;
-            //login_button.BackColor = Color.FromArgb(106, 176, 255); // Light Sky Blue
-            //login_button.ForeColor = Color.FromArgb(232, 236, 239); // Off-White
-            //login_button.Font = new Font("Calibri", 12, FontStyle.Bold);
-            //login_button.Size = new Size(130, 40);
+            login_button.Size = new Size(130, 40);
             login_button.FlatAppearance.BorderSize = 0;
-            //login_button.Text = "Login";
-            //// Add icon (if using a custom image)
-            //// login_button.Image = Image.FromFile("path_to_arrow_icon.png");
-            //// login_button.ImageAlign = ContentAlignment.MiddleLeft;
-            //// login_button.TextAlign = ContentAlignment.MiddleCenter;
+
+            // Generate Reports Button
+            generateReportButton.Size = new Size(130, 40);
+            generateReportButton.FlatAppearance.BorderSize = 0;
 
             // Apply rounded corners
             SetButtonRoundedCorners(signup_button);
             SetButtonRoundedCorners(login_button);
+            SetButtonRoundedCorners(generateReportButton);
+
+
+
+            ////////////////////////////////////////////////////////////////   just for testing
+            /*  
+            Form5 operatorDashboard = new Form5(14);
+            operatorDashboard.ShowDialog();
+            this.Close();
+            */
+
+            /*  
+            TravellerDashboardForm travelerDashboard = new TravellerDashboardForm(10);
+            travelerDashboard.ShowDialog();
+            this.Close();
+            */
+
+
+            /*  
+            AdminDashboardForm adminDashboard = new AdminDashboardForm(1);
+            adminDashboard.ShowDialog();
+            this.Close();
+            */
+
+
+            /*   
+            HotelDashboardForm hotelDashboard = new HotelDashboardForm(12);
+            hotelDashboard.ShowDialog();
+            this.Close();
+            */
         }
 
 
-    // Method for rounded corners
-    private void SetButtonRoundedCorners(Button button)
+        // Method for rounded corners
+        private void SetButtonRoundedCorners(Button button)
     {
         int radius = 20;
         GraphicsPath path = new GraphicsPath();
@@ -66,9 +84,8 @@ namespace DB_Project
 
     private void signup_button_Click(object sender, EventArgs e)
         {
-            signup_form signup_Form = new signup_form(1);
+            signup_form signup_Form = new signup_form();
             signup_Form.ShowDialog();
-            this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -78,9 +95,33 @@ namespace DB_Project
 
         private void login_button_Click(object sender, EventArgs e)
         {
-            signup_form signup_Form = new signup_form(0);
-            signup_Form.ShowDialog();
+            login_form login_Form = new login_form();
+            login_Form.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TravellerDashboardForm travellerDashboard = new TravellerDashboardForm(1);
+            travellerDashboard.ShowDialog();
             this.Close();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AdminDashboardForm adminDashboard = new AdminDashboardForm(2);
+            adminDashboard.ShowDialog();
+            this.Close();
+        }
+
+        private void welcome_window_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void generateReportButton_Click(object sender, EventArgs e)
+        {
+            GeneratedReports report = new GeneratedReports();
+            report.ShowDialog();
         }
     }
 }

@@ -9,34 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DB_Project
 {
     public partial class signup_form : Form
     {
-        public signup_form(int isSignup = 1)
+        public signup_form()
         {
             InitializeComponent();
 
+            this.WindowState = FormWindowState.Maximized;
             usertype_box.SelectedIndex = 3; // Default = "Traveler"
 
             signup_button.FlatAppearance.BorderSize = 0;
+            signup_button.Size = new Size(130, 40);
             SetButtonRoundedCorners(signup_button);
 
-            login_button.FlatAppearance.BorderSize = 0;
-            SetButtonRoundedCorners(login_button);
-
-            if (isSignup == 1)
-            {
-                signup_panel.Visible = true;
-                login_panel.Visible = false;
-            }
-            else
-            {
-                signup_panel.Visible = false;
-                login_panel.Visible = true;
-            }
+            signup_panel.Visible = true;
         }
         string[] usertypes = { "Admin", "Operator", "Service Provider", "Traveller" };
         private void SetButtonRoundedCorners(Button button)
@@ -111,9 +102,9 @@ namespace DB_Project
 
         private void signup_button_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-19TDJ6L\\SQLEXPRESS;Initial Catalog=Forms;Integrated Security=True;"); //Connection string
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-19TDJ6L\\SQLEXPRESS;Initial Catalog=TravelEase_Userfilled;Integrated Security=True;"); //Connection string
             conn.Open();
-            MessageBox.Show("Connection Open");
+
             SqlCommand cmd;
             int usertype = usertype_box.SelectedIndex;
             string fname = fname_box.Text,
@@ -124,9 +115,22 @@ namespace DB_Project
                 dob = dob_box.Text,
                 nationality = nationality_box.Text,
                 location = location_box.Text,
-                adminlevel = adminlevel_box.Text,
-                query = "Insert into users(firstname, lastname, phone, email, password, registration_date) values ('" + fname + "', '" + lname + "', '" + phoneno + "', '" + email + "', '" + password + "', ' GETDATE() ')",
-                query0, query1, query2, query3;
+                query = "Insert into users(first_name, last_name, phone, email, password, registration_date, user_type) values ('" + fname + "', '" + lname + "', '" + phoneno + "', '" + email + "', '" + password + "', GETDATE(), '" + usertype_box.SelectedItem?.ToString() + "')";
+
+            if (!string.IsNullOrWhiteSpace(email_box.Text))
+            {
+                string queryUnique = "SELECT 1 FROM users WHERE email = @email";
+                using (SqlCommand cmdUnique = new SqlCommand(queryUnique, conn))
+                {
+                    cmdUnique.Parameters.AddWithValue("@email", email);
+                    using (SqlDataReader reader = cmdUnique.ExecuteReader())
+                    if (reader.Read())
+                    {
+                        MessageBox.Show("Email already exists!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
 
             // Validation
             if (string.IsNullOrWhiteSpace(fname_box.Text))
@@ -144,17 +148,76 @@ namespace DB_Project
                 MessageBox.Show("Please enter your email.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if(!email_box.Text.Contains("@"))    // check more validation
+            else    // Check Validations
             {
-                MessageBox.Show("Please enter a valid email.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (!email_box.Text.Contains("@"))
+                {
+                    MessageBox.Show("Missing '@'...Enter email again", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                bool b1 = false, b2 = false, b3 = false;
+                int ind = 0, count = 0;
+
+                if (email == "")
+                {
+                    MessageBox.Show("Empty Input!...Enter email again", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (email[0] == '@')
+                {
+                    MessageBox.Show("Invalid input!...Enter email again", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    b1 = b2 = b3 = false;
+                    ind = 0;
+                    count = 0;
+                    for (int i = 0; i < email.Length; ++i)
+                    {
+                        if (email[i] == '@')
+                        {
+                            b1 = true;
+                            ind = i;
+                            ++count;
+                        }
+                        if (email[i] == '.') // && ind1 != 0)
+                            b2 = true;
+                        if (email[i] == '.' && i == 0)
+                            b3 = true;
+                    }
+                    if (count > 1)
+                    {
+                        MessageBox.Show("More than one @...Enter email again", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (b3)
+                    {
+                        MessageBox.Show("Invalid input!...Enter email again", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (email[ind] == '@' && email[ind + 1] == '.')
+                    {
+                        MessageBox.Show("Invalid input!...Enter email again", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (b1 && b2)
+                    {
+                        Console.WriteLine("Valid Email!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Missing '@' or '.'...Enter email again", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
             }
             if (string.IsNullOrWhiteSpace(password_box.Text))
             {
                 MessageBox.Show("Please enter your password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if(password_box.Text.Length < 8)
+            else if (password_box.Text.Length < 6)
             {
                 MessageBox.Show("Password must be at least 6 characters long.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -172,7 +235,6 @@ namespace DB_Project
                     MessageBox.Show("Please select an admin level.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                query0 = "Insert into admin(admin_level, status) values ('" + adminlevel_box.SelectedItem?.ToString() + "')";
             }
             if (usertype == 1)
             {
@@ -192,7 +254,7 @@ namespace DB_Project
                 }
                 //query2 = "Insert into serice_provider(admin_level, status) values ('" + adminlevel_box.SelectedItem?.ToString() + "')";
             }
-            else if (usertype == 3) 
+            else if (usertype == 3)
             {
                 if (string.IsNullOrWhiteSpace(nationality_box.Text))
                 {
@@ -205,15 +267,20 @@ namespace DB_Project
                     return;
                 }
                 // DOB validation (if needed)
+                //query3 = "Insert into "
             }
+
+            //if (usertype == 0)
+
+            query = "Insert into users(first_name, last_name, phone, email, password, registration_date, user_type, status) values ('" + fname + "', '" + lname + "', '" + phoneno + "', '" + email + "', '" + password + "', GETDATE(), '" + usertype_box.SelectedItem?.ToString() + "', 'Approved')";
             cmd = new SqlCommand(query, conn);
-            //cmd.ExecuteNonQuery();    ////////////////////////////// #UNCOMMENT
+            cmd.ExecuteNonQuery();
             cmd.Dispose();
+
             conn.Close();
 
-            login_panel.Visible = true;
-            signup_panel.Visible = false;
-            //this.Close();
+            /////////// print message
+            this.Close();
         }
 
         private void label18_Click(object sender, EventArgs e)
@@ -228,8 +295,38 @@ namespace DB_Project
 
         private void login_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            signup_panel.Visible = true;
-            login_panel.Visible = false;
+            
+        }
+
+        private void signup_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            login_form login_Form = new login_form();
+            login_Form.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void signup_form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showPasswordButton_Click(object sender, EventArgs e)
+        {
+            if (password_box.UseSystemPasswordChar)
+            {
+                password_box.UseSystemPasswordChar = false;
+                showPasswordButton.Image = DB_Project.Properties.Resources.eye2;
+            }
+            else
+            {
+                password_box.UseSystemPasswordChar = true;
+                showPasswordButton.Image = DB_Project.Properties.Resources.eye_hide2;
+            }
         }
     }
 }
